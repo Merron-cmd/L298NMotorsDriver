@@ -12,10 +12,20 @@ struct Motor
 For UNO, following pins support PWM:
 3, 5, 6, 9, 10, 11
 */
-const bool pinIsAnalog[20] = {0};
-pinIsAnalog[3] = true;
-pinIsAnalog[5] = true;
-pinIsAnalog[6] = true;
-pinIsAnalog[9] = true;
-pinIsAnalog[10] = true;
-pinIsAnalog[11] = true;
+bool pinIsAnalog[20] = {0};
+
+void loadAnalogPin()
+{
+  pinIsAnalog[3] = true;
+  pinIsAnalog[5] = true;
+  pinIsAnalog[6] = true;
+  pinIsAnalog[9] = true;
+  pinIsAnalog[10] = true;
+  pinIsAnalog[11] = true;
+}
+
+bool isAnalog(uint8_t pin)
+{
+  loadAnalogPin();
+  return pinIsAnalog[pin];
+}
