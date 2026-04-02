@@ -1,13 +1,14 @@
-#include "motorPins.h"
 #include "motor.h"
 
 void setup() 
 {
   Serial.begin(9600);
-  pinMode(Motor1_0, OUTPUT);
+  while(!Serial);
+  Serial.println(A0);
+  /*pinMode(Motor1_0, OUTPUT);
   pinMode(Motor1_1, OUTPUT);
   digitalWrite(Motor1_0, LOW);
-  setPWMTime(Motor1_1, 128, 10000);
+  setPWMTime(Motor1_1, 128, 10000);*/
   /*uint16_t time = micros();
   while(1)
   {
